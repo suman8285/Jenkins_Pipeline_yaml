@@ -1,0 +1,139 @@
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - description: "for api test"
+        id: "suman8285"
+        name: "suman"
+        properties:
+        - "apiToken"
+        - mailer:
+            emailAddress: "suman8285@gmail.com"
+        - preferredProvider:
+            providerId: "default"
+  slaveAgentPort: -1
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  artifactoryBuilder:
+    artifactoryServers: "FAILED TO EXPORT\norg.jfrog.hudson.ArtifactoryBuilder$DescriptorImpl#artifactoryServers:\
+      \ io.jenkins.plugins.casc.ConfiguratorException: Can't read attribute 'serverId'\
+      \ from org.jfrog.hudson.ArtifactoryServer@160dad89\r\n  at io.jenkins.plugins.casc.Attribute._getValue(Attribute.java:462)\r\
+      \n  at io.jenkins.plugins.casc.Attribute.getValue(Attribute.java:236)\r\n  at\
+      \ io.jenkins.plugins.casc.impl.configurators.DataBoundConfigurator.describe(DataBoundConfigurator.java:290)\r\
+      \n  at io.jenkins.plugins.casc.Attribute._describe(Attribute.java:329)\r\n \
+      \ at io.jenkins.plugins.casc.Attribute.describe(Attribute.java:258)\r\n  at\
+      \ io.jenkins.plugins.casc.Configurator.describe(Configurator.java:181)\r\n \
+      \ at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:115)\r\
+      \n  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.lambda$describe$3(GlobalConfigurationCategoryConfigurator.java:108)\r\
+      \n  at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source)\r\n\
+      \  at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)\r\n  at\
+      \ java.util.Iterator.forEachRemaining(Unknown Source)\r\n  at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Unknown\
+      \ Source)\r\n  at java.util.stream.AbstractPipeline.copyInto(Unknown Source)\r\
+      \n  at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)\r\n\
+      \  at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(Unknown Source)\r\
+      \n  at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(Unknown\
+      \ Source)\r\n  at java.util.stream.AbstractPipeline.evaluate(Unknown Source)\r\
+      \n  at java.util.stream.ReferencePipeline.forEach(Unknown Source)\r\n  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:108)\r\
+      \n  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:33)"
+    useCredentialsPlugin: false
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8060/github-webhook/"
+  gitSCM:
+    createAccountBasedOnEmail: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  ivyBuildTrigger:
+    extendedVersionMatching: false
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://localhost:8060/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  pollSCM:
+    pollingThreadCount: 10
+  timestamperConfig:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git.exe"
+      name: "Default"
+  maven:
+    installations:
+    - name: "MAVEN_LATEST"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.3"
