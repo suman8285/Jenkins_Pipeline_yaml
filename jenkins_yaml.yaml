@@ -1,0 +1,35 @@
+"flow-definition": 
+ actions: 
+  "org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction": 
+   _plugin: "pipeline-model-definition@1.6.0"
+  "org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction": 
+   jobProperties: ""
+   triggers: ""
+   parameters: ""
+   options: ""
+   _plugin: "pipeline-model-definition@1.6.0"
+ description: ""
+ keepDependencies: false
+ properties: ""
+ definition: 
+  scm: 
+   configVersion: 2
+   userRemoteConfigs: 
+    "hudson.plugins.git.UserRemoteConfig": 
+     url: "https://github.com/suman8285/jenkinsIntegration.git"
+   branches: 
+    "hudson.plugins.git.BranchSpec": 
+     name: "*/master"
+   doGenerateSubmoduleConfigurations: false
+   submoduleCfg: 
+    _class: list
+   extensions: ""
+   _class: "hudson.plugins.git.GitSCM"
+   _plugin: "git@4.2.2"
+  scriptPath: Jenkinsfile
+  lightweight: true
+  _class: "org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition"
+  _plugin: "workflow-cps@2.80"
+ triggers: ""
+ disabled: false
+ _plugin: "workflow-job@2.39"
